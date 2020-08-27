@@ -199,19 +199,19 @@ if __name__ == "__main__" :
     #
     upload_as_doc_handler = MessageHandler(
         upload_as_doc,
-        filters=Filters.command("uploadasdoc") & Filters.chat(chats=AUTH_CHANNEL)
+        filters=Filters.command([f"{UPLOAD_DOC}"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(upload_as_doc_handler)
     #
     upload_as_video_handler = MessageHandler(
         upload_as_video,
-        filters=Filters.command("uploadasvideo") & Filters.chat(chats=AUTH_CHANNEL)
+        filters=Filters.command([f"{UPLOAD_VIDEO}"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(upload_as_video_handler)
 
     split_video_handler = MessageHandler(
         split_video,
-        filters=Filters.command("split") & Filters.chat(chats=AUTH_CHANNEL)
+        filters=Filters.command("split@speedlestbot") & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(split_video_handler)
 
